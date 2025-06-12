@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Fiskekort Kalender</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fefdf7;
+      padding: 2rem;
+      color: #333;
+    }
+
+    .calendar-container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .month-nav {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .qty-selector {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .qty-selector button {
+      width: 32px;
+      height: 32px;
+      font-size: 18px;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
+    }
+
+    .day {
+      border: 1px solid #d6d6c2;
+      border-radius: 4px;
+      min-height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 14px;
+    }
+
+    .day.available {
+      border: 2px solid #234125;
+      font-weight: bold;
+    }
+
+    .day-header {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .price {
+      margin-top: 4px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calendar-container">
+
+    <div class="qty-selector">
+      <label>Antall fiskekort:</label>
+      <button>-</button>
+      <span>1</span>
+      <button>+</button>
+    </div>
+
+    <div class="calendar-header">
+      <span>&lt;</span>
+      <div class="month-nav">Juni 2025</div>
+      <span>&gt;</span>
+    </div>
+
+    <!-- Weekdays -->
+    <div class="calendar-grid">
+      <div class="day-header">man</div>
+      <div class="day-header">tir</div>
+      <div class="day-header">ons</div>
+      <div class="day-header">tors</div>
+      <div class="day-header">fre</div>
+      <div class="day-header">lør</div>
+      <div class="day-header">søn</div>
+
+      <!-- Empty days (leading) -->
+      <div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div>
+      <div class="day"></div><div class="day"></div><div class="day">1</div>
+
+      <!-- Fill rest of calendar -->
+      <div class="day">2</div><div class="day">3</div><div class="day">4</div>
+      <div class="day">5</div><div class="day">6</div><div class="day">7</div><div class="day">8</div>
+
+      <div class="day">9</div><div class="day">10</div><div class="day">11</div>
+      <div class="day">12</div><div class="day">13</div><div class="day">14</div>
+      <div class="day available">15<div class="price">690,-</div></div>
+
+      <div class="day">16</div>
+      <div class="day available">17<div class="price">690,-</div></div>
+      <div class="day">18</div>
+      <div class="day available">19<div class="price">690,-</div></div>
+      <div class="day">20</div>
+      <div class="day available">21<div class="price">690,-</div></div>
+      <div class="day">22</div>
+
+      <div class="day available">23<div class="price">690,-</div></div>
+      <div class="day">24</div>
+      <div class="day available">25<div class="price">690,-</div></div>
+      <div class="day">26</div>
+      <div class="day available">27<div class="price">690,-</div></div>
+      <div class="day">28</div><div class="day">29</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
