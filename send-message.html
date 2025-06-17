@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Fiske</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon-32x32.png" type="image/png">
+</head>
+<body class="send-message">
+    <header class="navbar">
+    <h1>Kirkesnes Laksefiske</h1>
+    <nav class="nav-links">
+      <a href="index.html">Hovedside</a>
+      <a href="map.html">Kart</a>
+      <a href="fishing-area.html">Våre vald</a>
+      <a href="images.html">Bilder</a>
+      <a href="send-message.html">Book fiske</a>
+    </nav>
+  </header>
+  <h2 class="send-message">Kontakt oss (Årets fiske kan kjøpes på Inatur.no)</h2>
+
+  <form action="https://formspree.io/f/xrbkpgob" method="POST">
+    <label for="name">Fullt navn </label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="start-date">Ønsket startdato</label>
+    <input type="date" name="start-date" id="start-date" required>
+
+    <label for="end-date">Ønsket sluttdato</label>
+    <input type="date" name="end-date" id="end-date" required>
+
+    <label for="message">Melding (valgfritt)</label>
+    <textarea name="message" id="message" rows="4"></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+<footer>
+    <h3>Kirkesnes Laksefiske</h3>
+    <p>Tlf: +47 907 15 102</p>
+    <p>kirkesneslaksefiske@gmail.com</p>
+    <p>&copy; 2025 Kirkesnes Laksefiske. Alle rettigheter reservert.</p>
+  </footer>
+</body>
+</html>

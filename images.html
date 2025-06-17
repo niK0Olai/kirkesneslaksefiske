@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bildebibliotek</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon-32x32.png" type="image/png">
+
+</head>
+
+<body class="images">  
+<header class="navbar">
+    <h1>Kirkesnes Laksefiske</h1>
+    <nav class="nav-links">
+      <a href="index.html">Hovedside</a>
+      <a href="map.html">Kart</a>
+      <a href="fishing-area.html">Våre vald</a>
+      <a href="images.html">Bilder</a>
+      <a href="send-message.html">Book fiske</a>
+    </nav>
+</header>
+    <h2 style="margin-left:2.1rem;">Bildegalleri</h2>
+    <div class="gallery">
+        <img src="images/Heimnesholmen_oppover.jpg" alt="Heimnesholmen Oppover" style="cursor:zoom-in;">   
+        <img src="images/kirkøra_hoved.jpg" alt="Kirkesnesøra" style="cursor:zoom-in;">
+        <img src="images/Heimnesholmen_nedover.jpg" alt="Heimnesholmen nedover" style="cursor:zoom-in;">
+        <img src="images/kkjeften2.JPG" alt="Utløpet av kirkeselva" style="cursor:zoom-in;">
+        <img src="images/Arnold2.jpg" alt="Mann med laks" style="cursor:zoom-in;">
+        <img src="images/bålpanne.kirkøra.jpg" alt="Bålpanne" style="cursor:zoom-in;">
+        <img src="images/rundhaugøra_benk.jpg" alt="Benk ved Rundhaugøra" style="cursor:zoom-in;">
+        <img src="images/oera1.JPG" alt="Rundhaugøra" style="cursor:zoom-in;">  
+        <img src="images/Laks1.jpg" alt="Måling av laks" style="cursor:zoom-in;">
+        <img src="images/gapa_kkjeften.JPG" alt="Gapahuk utløpet" style="cursor:zoom-in;">
+        <img src="images/15kg.jpg" alt="15kg Laks" class="gallery-large"  style="cursor:zoom-in;"> 
+
+    </div>
+    <footer>
+    <h3>Kirkesnes Laksefiske</h3>
+    <p>Tlf: +47 907 15 102</p>
+    <p>kirkesneslaksefiske@gmail.com</p>
+    <p>&copy; 2025 Kirkesnes Laksefiske. Alle rettigheter reservert.</p>
+  </footer>
+    <div id="lightbox-modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <img id="lightbox-img" src="" alt="" style="max-width:90vw; max-height:90vh; border-radius:10px; box-shadow:0 0 20px #000;">
+</div>
+
+<script>// Get modal elements
+  const modal = document.getElementById('lightbox-modal');
+  const modalImg = document.getElementById('lightbox-img');
+  // Add click event to all gallery images
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', function() {
+      modal.style.display = 'flex';
+      modalImg.src = this.src;
+      modalImg.alt = this.alt;
+    });
+  });
+  // Close modal on click
+  modal.addEventListener('click', function() {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  });
+  </script>
+     
+
+</body>
+</html>
