@@ -53,6 +53,11 @@
     <p>&copy; 2025 Kirkesnes Laksefiske. Alle rettigheter reservert.</p>
   </footer>
   <script src="script.js"></script>
+  <script>
+  if (location.protocol !== 'https:') {
+    location.replace(`https://${location.hostname}${location.pathname}${location.search}`);
+  }
+</script>
 </body>
 </html>
 
