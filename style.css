@@ -1,3 +1,65 @@
+.hamburger {
+  display: none;
+  background: #033372;
+  color: #fff;
+  border: none;
+  font-size: 2.2rem;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 1rem;
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.hamburger:hover,
+.hamburger:focus {
+  background: #0250b6;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    z-index: 100;
+    padding: 1rem 0;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-links a {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: #033372;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    background: #e0eafc;
+    color: #0250b6;
+    outline: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  header.navbar {
+    position: relative;
+  }
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -21,20 +83,29 @@ nav a {
   text-decoration: underline;
 }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
+@media (min-width: 701px) {
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
 }
 body.home {
   font-family: 'Libre Franklin', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('images/babb.jfif');
-  background-size: cover;         /* Cover full een */
-  background-repeat: no-repeat;   /* Don’t repeat image */
-  background-position: center;    /* Center image */  
+  background-image: url('images/Rundhaug-bro.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   color: #333;
 }
+
+
 body.fishing-area {
   font-family: 'Libre Franklin', Arial, sans-serif;
   text-align: center;
@@ -59,11 +130,16 @@ body.map {
   }
 body.images {
   font-family: 'Libre Franklin', Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: rgb(231, 231, 218);
   margin: 0;
   padding: 0;
   }
-
+body.english {
+  font-family: 'Libre Franklin', Arial, sans-serif;
+  background-color: rgb(231, 231, 218);
+  margin: 0;
+  padding: 0;
+}
 .zones-container {
   display: flex;
   flex-wrap: wrap;
@@ -112,6 +188,20 @@ body.images {
   font-size: 1rem;
   line-height: 1.5;
 }
+.zone-link {
+  flex: 1 1 320px;
+  max-width: 350px;
+  min-width: 280px;
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+}
+.zone-link:visited {
+  color: inherit;
+}
+.zone-link .zone-card {
+  cursor: pointer;
+}
 @media (max-width: 700px) {
   .zones-container {
     flex-direction: column;
@@ -131,7 +221,8 @@ section.home {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   padding: 2rem;
-  margin-top: 15rem;
+  margin-top: 20rem;
+  margin-bottom: 10rem;
   opacity: 0.9;
 }
 h2.send-message {
@@ -313,12 +404,106 @@ form button:hover {
   }
 }
 
+.english-main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.info-section {
+  background: #f8fafc;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.info-section h2 {
+  margin-top: 0;
+  color: #033372;
+}
+
+.info-section ul {
+  margin: 1rem 0 0 1.2rem;
+  padding: 0;
+}
+.map-and-gallery {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.norway-map-wrapper {
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 240px;
+  max-width: 395px;
+  width: 100%;
+}
+
+.norway-map-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  object-fit: contain;
+  display: block;
+}
+
+.english-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 440px;
+  width: 100%;
+}
+
+.english-gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  .map-and-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .english-gallery {
+    grid-template-columns: 1fr 1fr;
+    max-width: 98vw;
+  }
+  .norway-map-wrapper {
+    max-width: 98vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .english-gallery {
+    grid-template-columns: 1fr;
+  }
+  .english-gallery img {
+    height: 140px;
+  }
+}
 footer {
   text-align: center;
   padding: 1rem;
   padding-bottom: 2rem;
-  background: #033372;
-  color: white;
+  background: rgb(255, 255, 255);
+  color: black;
   margin-top: 2rem;
   width: 100%;
   bottom: 0;

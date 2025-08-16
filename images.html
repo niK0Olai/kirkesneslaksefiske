@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bildebibliotek</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/favicon-32x32.png" type="image/png">
@@ -11,11 +11,15 @@
 <body class="images">  
 <header class="navbar">
     <h1>Kirkesnes Laksefiske</h1>
+    <button class="hamburger" aria-label="Meny">
+    &#9776;
+    </button>
     <nav class="nav-links">
       <a href="index.html">Hovedside</a>
       <a href="map.html">Kart</a>
       <a href="fishing-area.html">Våre vald</a>
       <a href="images.html">Bilder</a>
+      <a href="english.html">English</a>
       <a href="send-message.html">Book fiske</a>
     </nav>
 </header>
@@ -32,6 +36,14 @@
         <img src="images/Laks1.jpg" alt="Måling av laks" style="cursor:zoom-in;">
         <img src="images/gapa_kkjeften.JPG" alt="Gapahuk utløpet" style="cursor:zoom-in;">
         <img src="images/15kg.jpg" alt="15kg Laks" class="gallery-large"  style="cursor:zoom-in;"> 
+        <img src="images/odin-laks.jpg" alt="odin laks"   style="cursor:zoom-in;">
+        <img src="images/tvøra-benkj.jpg" alt="Tvillingnesøra benk" style="cursor:zoom-in;">
+        <img src="images/odin-kjøre-laks.jpg" alt="odin kjøre laks"   style="cursor:zoom-in;">
+        <img src="images/nilsM-laks.jpeg" alt="nilsM laks"  style="cursor:zoom-in;">
+        <img src="images/Rundhaug-bro.jpeg" alt="Rundhaugøra bro" style="cursor:zoom-in;">
+        <img src="images/Fluefisker.jpeg" alt="Fluefisker" style="cursor:zoom-in;">
+        <img src="images/laks satt ut.jpeg" alt="Laks" style="cursor:zoom-in;">
+        <img src="images/kirkøra nedover.jpeg" alt="Kirkøra nedover" style="cursor:zoom-in;">
 
     </div>
     <footer>
@@ -44,24 +56,8 @@
   <img id="lightbox-img" src="" alt="" style="max-width:90vw; max-height:90vh; border-radius:10px; box-shadow:0 0 20px #000;">
 </div>
 
-<script>// Get modal elements
-  const modal = document.getElementById('lightbox-modal');
-  const modalImg = document.getElementById('lightbox-img');
-  // Add click event to all gallery images
-  document.querySelectorAll('.gallery img').forEach(img => {
-    img.addEventListener('click', function() {
-      modal.style.display = 'flex';
-      modalImg.src = this.src;
-      modalImg.alt = this.alt;
-    });
-  });
-  // Close modal on click
-  modal.addEventListener('click', function() {
-    modal.style.display = 'none';
-    modalImg.src = '';
-  });
-  </script>
-     
+<script src="script.js"></script>
+
 
 </body>
 </html>

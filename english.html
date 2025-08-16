@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kirkesnes Laksefiske</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon-32x32.png" type="image/png">
+  
+
+</head>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIoAjDllT9aXmWVcQo2Q-0_tK6chXHGbg"></script>
+<script>
+  function initMap() {
+    var location = {lat: 69.01449705378963, lng: 18.89151705646173};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 5,
+      center: location
+    });
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map,
+      title: 'Kirkesnes Laksefiske'
+    });
+  }
+  window.onload = initMap;
+</script>
+<div id="lightbox-modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <img id="lightbox-img" src="" alt="" style="max-width:90vw; max-height:90vh; border-radius:10px; box-shadow:0 0 20px #000;">
+</div>
+<body class="english">
+<header class="navbar">
+    <h1>Kirkesnes Laksefiske</h1>
+    <button class="hamburger" aria-label="Meny">
+    &#9776;
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Hovedside</a>
+      <a href="map.html">Kart</a>
+      <a href="fishing-area.html">Våre vald</a>
+      <a href="images.html">Bilder</a>
+      <a href="english.html">English</a>
+      <a href="send-message.html">Book Fiske</a>
+    </nav>
+  </header>
+<main class="english-main">
+  <section class="info-section">
+    <h2>Welcome to Kirkesnes Laksefiske</h2>
+    <p>
+      Experience salmon fishing in the beautiful Målselva river in Northern Norway. Målselva is one of the best salmon rivers in Norway both in size and amounts of salmon. Our fishing area offers 8 unique zones, great facilities, and a rich history. Whether you are a seasoned angler or a beginner, you will find the perfect spot here. The area is easily accessible, with a 20 minute drive from the nearest airport at Bardufoss, and a 2 hour drive from Tromsø.
+    </p>
+    <ul>
+      <li>Season: June 15 – August 26</li>
+      <li>Booking: <a href="send-message.html">Contact us</a> </li>
+    </ul>
+  </section>
+  <section class="map-and-gallery">
+    <div class="english-gallery">
+    <img src="images/rundhaugøra_hoved.JPG" alt="Rundhaugøra" style="cursor:zoom-in;">
+    <img src="images/Arnold2.jpg" alt="Man with salmon" style="cursor:zoom-in;">
+    <img src="images/Heimnesholmen_oppover.jpg" alt="Heimnesholmen" style="cursor:zoom-in;">
+    <img src="images/kirkøra_hoved.jpg" alt="Kirkesnesøra" style="cursor:zoom-in;">
+    <img src="images/Fluefisker.jpeg" alt="Rundhaugøra" style="cursor:zoom-in;">
+    <img src="images/babb.jfif" alt="gapahuk" style="cursor:zoom-in;">
+  </div>
+  <div class="norway-map-wrapper">
+    <div id="map" style="width:375px; height:515px; border-radius:8px;"></div>
+  </div>
+  
+</section>
+
+</main>
+<footer>
+    <h3>Kirkesnes Laksefiske</h3>
+    <p>Tlf: +47 907 15 102</p>
+    <p>kirkesneslaksefiske@gmail.com</p>
+    <p>&copy; 2025 Kirkesnes Laksefiske. Alle rettigheter reservert.</p>
+  </footer>
+    <script src="script.js"></script>
+</body>
+</html>

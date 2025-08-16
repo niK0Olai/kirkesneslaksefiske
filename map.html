@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kart</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon-32x32.png" type="image/png">
@@ -11,11 +11,15 @@
 <body class="map">  
     <header class="navbar">
     <h1>Kirkesnes Laksefiske</h1>
+    <button class="hamburger" aria-label="Meny">
+    &#9776;
+    </button>
     <nav class="nav-links">
       <a href="index.html">Hovedside</a>
       <a href="map.html">Kart</a>
       <a href="fishing-area.html">Våre vald</a>
       <a href="images.html">Bilder</a>
+      <a href="english.html">English</a>
       <a href="send-message.html">Book fiske</a>
     </nav>
   </header>
@@ -56,24 +60,7 @@
   <div id="map-lightbox-modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
   <img id="map-lightbox-img" src="" alt="Sonekart stort" style="max-width:100vw; max-height:100vh; border-radius:10px; box-shadow:0 0 20px #000;">
 </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const modal = document.getElementById('map-lightbox-modal');
-    const modalImg = document.getElementById('map-lightbox-img');
-    const sonekartImg = document.getElementById('sonekart-img');
-    if (modal && modalImg && sonekartImg) {
-      sonekartImg.addEventListener('click', function() {
-        modal.style.display = 'flex';
-        modalImg.src = this.src;
-        modalImg.alt = this.alt;
-      });
-      modal.addEventListener('click', function() {
-        modal.style.display = 'none';
-        modalImg.src = '';
-      });
-    }
-  });
-</script>
+<script src="script.js"></script>
 </body>
 
 </html>
