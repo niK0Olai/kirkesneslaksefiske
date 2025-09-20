@@ -521,7 +521,7 @@ footer {
   padding: 15px 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   border-radius: 10px;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   z-index: 9999;
