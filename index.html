@@ -49,14 +49,12 @@
     location.replace(`https://${location.hostname}${location.pathname}${location.search}`);
   }
 </script>
-<div id="cookie-banner" class="cookie-banner">
-  <p>
-    Vi bruker cookies for å analysere trafikk og forbedre opplevelsen din. 
-    Ved å fortsette å bruke nettstedet, godtar du vår bruk av cookies.
-  </p>
-  <button id="accept-cookies">Godta</button>
-  <button id="decline-cookies">Avslå</button>
+<div id="cookie-banner" class="cookie-banner" style="display: none;">
+  <p>Vi bruker cookies for å samle inn anonym statistikk og forbedre opplevelsen din.</p>
+  <button class="cookie-accept">Godta</button>
+  <button class="cookie-decline">Avslå</button>
 </div>
+
 
 </body>
 </html>

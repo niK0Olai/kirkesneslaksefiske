@@ -92,6 +92,27 @@ function loadAnalytics() {
 if (localStorage.getItem("cookie-consent") === "accepted") {
   loadAnalytics();
 } 
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = banner.querySelector(".cookie-accept");
+  const declineBtn = banner.querySelector(".cookie-decline");
+
+  // sjekk om bruker har valgt før
+  if (!localStorage.getItem("cookieConsent")) {
+    banner.style.display = "block";
+  }
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "accepted");
+    banner.style.display = "none";
+  });
+
+  declineBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "declined");
+    banner.style.display = "none";
+  });
+});
+
 
     //FORM SUBMISSION
   document.getElementById("dataForm").addEventListener("submit", async function (e) {
