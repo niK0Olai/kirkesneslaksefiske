@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+
+
 //Map Lightbox
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById('map-lightbox-modal');
@@ -51,6 +53,45 @@ modal.addEventListener('click', function() {
   modalImg.src = '';
 });
 
+// Cookie Banner Functionality
+
+// Show banner if no choice saved
+if (!localStorage.getItem("cookie-consent")) {
+  document.getElementById("cookie-banner").style.display = "flex";
+}
+
+// Accept cookies
+document.getElementById("accept-cookies").addEventListener("click", function() {
+  localStorage.setItem("cookie-consent", "accepted");
+  document.getElementById("cookie-banner").style.display = "none";
+  loadAnalytics();
+});
+
+// Decline cookies
+document.getElementById("decline-cookies").addEventListener("click", function() {
+  localStorage.setItem("cookie-consent", "declined");
+  document.getElementById("cookie-banner").style.display = "none";
+});
+
+// Function to load Google Analytics
+function loadAnalytics() {
+  var script = document.createElement("script");
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-CRXQZST8E5";
+  script.async = true;
+  document.head.appendChild(script);
+
+  script.onload = function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CRXQZST8E5', { anonymize_ip: true });
+  };
+}
+
+ // If previously accepted, load GA immediately
+if (localStorage.getItem("cookie-consent") === "accepted") {
+  loadAnalytics();
+} 
 
     //FORM SUBMISSION
   document.getElementById("dataForm").addEventListener("submit", async function (e) {

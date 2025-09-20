@@ -36,7 +36,14 @@
   
     
   </main>
-
+<div id="cookie-banner" class="cookie-banner">
+  <p>
+    Vi bruker cookies for å analysere trafikk og forbedre opplevelsen din. 
+    Ved å fortsette å bruke nettstedet, godtar du vår bruk av cookies.
+  </p>
+  <button id="accept-cookies">Godta</button>
+  <button id="decline-cookies">Avslå</button>
+</div>
   <footer>
     <h3>Kirkesnes Laksefiske</h3>
     <p>Tlf: +47 907 15 102</p>
@@ -44,11 +51,13 @@
     <p>Istindveien 1500, 9336 Rundhaug</p>
   </footer>
   <script src="script.js"></script>
-  <script>
+<script>
   if (location.protocol !== 'https:') {
     location.replace(`https://${location.hostname}${location.pathname}${location.search}`);
   }
 </script>
+
+
 </body>
 </html>
 
