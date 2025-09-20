@@ -54,28 +54,38 @@ modal.addEventListener('click', function() {
 });
 
 // Cookie Banner Functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = banner.querySelector(".cookie-accept");
+  const declineBtn = banner.querySelector(".cookie-decline");
 
-// Show banner if no choice saved
-if (!localStorage.getItem("cookie-consent")) {
-  document.getElementById("cookie-banner").style.display = "flex";
-}
+  // Sjekk om bruker har valgt før
+  if (!localStorage.getItem("cookie-consent")) {
+    banner.style.display = "block";
+  }
 
-// Accept cookies
-document.getElementById("accept-cookies").addEventListener("click", function() {
-  localStorage.setItem("cookie-consent", "accepted");
-  document.getElementById("cookie-banner").style.display = "none";
-  loadAnalytics();
+  // Godta cookies
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookie-consent", "accepted");
+    banner.style.display = "none";
+    loadAnalytics();
+  });
+
+  // Avslå cookies
+  declineBtn.addEventListener("click", () => {
+    localStorage.setItem("cookie-consent", "declined");
+    banner.style.display = "none";
+  });
+
+  // Hvis tidligere godtatt → last GA direkte
+  if (localStorage.getItem("cookie-consent") === "accepted") {
+    loadAnalytics();
+  }
 });
 
-// Decline cookies
-document.getElementById("decline-cookies").addEventListener("click", function() {
-  localStorage.setItem("cookie-consent", "declined");
-  document.getElementById("cookie-banner").style.display = "none";
-});
-
-// Function to load Google Analytics
+// Funksjon for å laste Google Analytics
 function loadAnalytics() {
-  var script = document.createElement("script");
+  const script = document.createElement("script");
   script.src = "https://www.googletagmanager.com/gtag/js?id=G-CRXQZST8E5";
   script.async = true;
   document.head.appendChild(script);
@@ -88,30 +98,6 @@ function loadAnalytics() {
   };
 }
 
- // If previously accepted, load GA immediately
-if (localStorage.getItem("cookie-consent") === "accepted") {
-  loadAnalytics();
-} 
-document.addEventListener("DOMContentLoaded", () => {
-  const banner = document.getElementById("cookie-banner");
-  const acceptBtn = banner.querySelector(".cookie-accept");
-  const declineBtn = banner.querySelector(".cookie-decline");
-
-  // sjekk om bruker har valgt før
-  if (!localStorage.getItem("cookieConsent")) {
-    banner.style.display = "block";
-  }
-
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookieConsent", "accepted");
-    banner.style.display = "none";
-  });
-
-  declineBtn.addEventListener("click", () => {
-    localStorage.setItem("cookieConsent", "declined");
-    banner.style.display = "none";
-  });
-});
 
 
     //FORM SUBMISSION
