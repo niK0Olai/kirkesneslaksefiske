@@ -106,7 +106,7 @@ function loadAnalytics() {
 
 // ========== VISITOR COUNTER ==========
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("counter.php")
+  fetch("backend/counter.php")
     .then(response => response.json())
     .then(data => {
       console.log("Antall i dag:", data.today);
