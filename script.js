@@ -104,16 +104,6 @@ function loadAnalytics() {
   };
 }
 
-// ========== VISITOR COUNTER ==========
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("backend/counter.php")
-    .then(response => response.json())
-    .then(data => {
-      console.log("Antall i dag:", data.today);
-      console.log("Alle dager:", data.all);
-    })
-    .catch(err => console.error("Feil i counter:", err));
-});
 
 // ========== FORM SUBMISSION ==========
 document.addEventListener("DOMContentLoaded", () => {
