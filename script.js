@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       banner.style.display = "none";
     });
 
-    if (localStorage.getItem("cookie-consent") === "accepted") {
+    if (localStorage.getItem("cookie-consent") !== "declined") {
       loadAnalytics();
     }
   }
